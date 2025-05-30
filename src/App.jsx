@@ -1,5 +1,6 @@
 import "./App.css";
-import mclogo from "../public/mcdonald.png"
+import mclogo from "./images/mcdonald.png"
+import Home from "./components/home";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <img src={mclogo} alt="Logo" />
         </div>
       </div>
+      <Home/>
     </>
   );
 }

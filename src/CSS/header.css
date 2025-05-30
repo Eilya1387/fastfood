@@ -1,0 +1,64 @@
+:root {
+  --primary-color: #e63945;
+  --secondary-color: #faab34;
+  --text-color: white;
+}
+@font-face {
+  font-family: title;
+  src: url(./fonts/Pelak-Bold.ttf);
+}
+@font-face {
+  font-family: secendary;
+  src: url(./fonts/Vazir.ttf);
+}
+@font-face {
+  font-family: text;
+  src: url(./fonts/Shabnam.ttf);
+}
+header {
+  width: 100%;
+  height: 90vh;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+}
+.title-header{
+      font-family: secendary;
+  color: var(--text-color);
+  font-size: 50px;
+  font-weight: bold;
+  direction: rtl;
+  width: 40%;
+}
+
+.picture img {
+  width: 100%;
+  height: 90vh;
+}
+.circle{
+    width:180px;
+    height: 250px;
+    border-radius: 100px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.circle span{
+  font-family: text;
+    font-size: 50px;
+}
+.offer{
+    display: flex;
+    
+}
+.offer h3{
+width: 40%;
+
+}
