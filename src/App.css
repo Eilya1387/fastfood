@@ -89,7 +89,7 @@ width: 52px;
 height: 52px;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
@@ -102,4 +102,4 @@ height: 52px;
 ::-webkit-scrollbar-thumb {
   background: var(--secondary-color);
   border-radius: 10px;
-}
+} */
