@@ -49,15 +49,33 @@ width: 25%;
 height: 100%;
 text-align: center;
 }
-.items ul a{
-font-family: title;
-  color: var(--text-color);
-transition: .5s ease-in-out;
+.items ul a {
+  position: relative;
+  color: var(--text-color); /* یا هر رنگ پیش‌فرضی که داری */
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
+  font-family: title;
 }
-.items ul a:hover{
+
+.items ul a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+}
+
+.items ul a:hover {
   color: var(--secondary-color);
   font-size: larger;
   text-shadow: 0px 0px 20px black;
+}
+
+.items ul a:hover::after {
+  width: 100%;
 }
 
 .btn-container button{
