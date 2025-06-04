@@ -1,4 +1,5 @@
 import "../CSS/footer.css";
+import { Route, Routes, Link, Navigate } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -18,10 +19,10 @@ const Footer = () => {
     <div className="foot-slide2">
       <h2>لینک های سریع</h2>
       <ul>
-        <li><a href="#">صفحه اصلی</a></li>
-        <li><a href="#">منوی غذا</a></li>
-        <li><a href="#">درباره ما</a></li>
-        <li><a href="#">تماس با ما</a></li>
+        <li><Link to="/">خانه</Link></li>
+        <li><Link to="/Order">منوی غذا</Link></li>
+        <li><Link to="/About">درباره ما</Link></li>
+        <li><Link to="/Contact">ارتباط با ما</Link></li>
       </ul>
     </div>
     <div className="foot-slide3">

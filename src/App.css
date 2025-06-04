@@ -3,6 +3,9 @@
   --secondary-color: #FAAB34;
   --text-color: white;
 }
+html {
+  scroll-behavior: smooth;
+}
 @font-face {
   font-family: title;
   src: url(./fonts/Pelak-Bold.ttf);
@@ -51,7 +54,7 @@ text-align: center;
 }
 .items ul a {
   position: relative;
-  color: var(--text-color); /* یا هر رنگ پیش‌فرضی که داری */
+  color: var(--text-color);
   text-decoration: none;
   transition: color 0.3s ease, font-size 0.3s ease;
   font-family: title;
