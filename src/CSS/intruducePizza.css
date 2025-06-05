@@ -78,6 +78,7 @@
 
   .pizzas div h3 {
     font-size: 2.5vh;
+      white-space: break-spaces;
   }
 
   .pizzas div span {
