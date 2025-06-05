@@ -4,38 +4,41 @@ import "../App.css";
 
 const Headmenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [shouldRender, setShouldRender] = useState(false);
 
   const toggleMenu = () => {
-    if (isOpen) {
+    if (!isOpen) {
+      setShouldRender(true);
+      setTimeout(() => {
+        setIsOpen(true);
+      }, 10);
+    } else {
       setIsOpen(false);
       setTimeout(() => {
-        setIsVisible(false);
+        setShouldRender(false);
       }, 300);
-    } else {
-      setIsVisible(true);
-      setTimeout(() => setIsOpen(true), 10);
     }
   };
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [isOpen]);
+
   return (
     <>
       <div className="hamburger-icon" onClick={toggleMenu}>
-        <i className={isOpen ? "bi bi-x-lg" : "bi bi-list"}></i>
+        <i className="bi bi-list"></i>
       </div>
-      {isVisible && (
-        <div className={`hamburger-menu ${isOpen ? "open" : "close"}`}>
+
+      {shouldRender && (
+        <div
+          className={`hamburger-menu ${isOpen ? "open" : ""} ${
+            !isOpen ? "closing" : ""
+          }`}
+        >
           <ul>
             <li>
               <Link to="/" onClick={toggleMenu}>

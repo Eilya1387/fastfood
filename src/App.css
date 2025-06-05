@@ -23,6 +23,7 @@ body {
   margin: 0;
   overflow-x: hidden !important;
 }
+
 a,
 li {
   text-decoration: none;
@@ -147,7 +148,6 @@ li {
   }
 }
 
-
 @media (max-width: 768px) {
   .head-container {
     justify-content: space-between;
@@ -159,7 +159,7 @@ li {
     justify-content: flex-start !important;
   }
   .logo {
-    display: none; 
+    display: none;
   }
 
   .items ul {
@@ -191,7 +191,6 @@ li {
     margin-left: 1vh;
   }
 }
-
 
 @media (max-width: 480px) {
   .items ul a {
@@ -233,32 +232,31 @@ li {
 }
 
 .hamburger-menu {
-  position: absolute;
-  top: 0vh;
+  position: fixed;
+  top: 0;
   right: 0;
   background-color: var(--primary-color);
   width: 60vw;
-  height: 100%;
+  height: 100vh;
   max-width: 300px;
   padding: 20px;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.4);
   z-index: 1000;
   border-radius: 0 0 0 10px;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   direction: rtl;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  opacity: 1;
+  pointer-events: none;
 }
-
-
 
 .hamburger-menu.open {
-  transform: translateX(0%);
-  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-
-.hamburger-menu.close {
-  transform: translateX(100%);
-  opacity: 0;
+.hamburger-menu.hidden {
+  display: none;
 }
 
 .hamburger-menu ul {
@@ -299,12 +297,12 @@ li {
   .hamburger-icon {
     display: block;
     position: absolute;
-    top: 2vh;
     left: 2vw;
   }
-.head-container div {
-  width: auto;
-}
+
+  .hamburger-icon {
+    width: auto !important;
+  }
   .items,
   .logo,
   .btn-container {
