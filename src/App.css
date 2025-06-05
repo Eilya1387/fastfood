@@ -302,7 +302,9 @@ li {
     top: 2vh;
     left: 2vw;
   }
-
+.head-container div {
+  width: auto;
+}
   .items,
   .logo,
   .btn-container {
