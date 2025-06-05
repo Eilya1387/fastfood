@@ -263,7 +263,7 @@ li {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 95%;
+  height: 90%;
 }
 
 .hamburger-menu ul li {
