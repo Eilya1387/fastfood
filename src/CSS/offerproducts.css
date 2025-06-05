@@ -150,3 +150,84 @@
   z-index: 2;
   font-size: 4vh;
 }
+
+/* responsive */
+@media (max-width: 768px) {
+  .poster-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .poster-child1,
+  .poster-child2 {
+    width: 100%;
+    height: auto;
+  }
+
+  .poster1,
+  .poster2,
+  .poster3 {
+    height: 50vh;
+    border: none;
+  }
+
+  .poster1 h3,
+  .poster2 h3,
+  .poster3 h3 {
+    font-size: 2.2vh;
+    text-align: center;
+    padding: 0 2vw;
+  }
+
+  .poster1 button,
+  .poster2 button,
+  .poster3 button {
+    width: 60%;
+    height: 5vh;
+    font-size: 1.8vh;
+  }
+
+  .circle-poster {
+    width: 12vh !important;
+    height: 12vh !important;
+    font-size: 2.5vh !important;
+    left: 2vh;
+    top: 2vh;
+  }
+
+  .poster2 .circle-poster,
+  .poster3 .circle-poster {
+    left: 2vh;
+    top: 2vh;
+  }
+}
+@media (max-width: 480px) {
+  .poster1,
+  .poster2,
+  .poster3 {
+    height: 45vh;
+  }
+
+  .poster1 h3,
+  .poster2 h3,
+  .poster3 h3 {
+    font-size: 1.8vh;
+    padding: 0 5vw;
+  }
+
+  .poster1 button,
+  .poster2 button,
+  .poster3 button {
+    width: 70%;
+    height: 4.5vh;
+    font-size: 1.5vh;
+  }
+
+  .circle-poster {
+    width: 10vh !important;
+    height: 10vh !important;
+    font-size: 2.2vh !important;
+    left: 1.5vh;
+    top: 1.5vh;
+  }
+}

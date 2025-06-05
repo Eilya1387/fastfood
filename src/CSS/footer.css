@@ -160,7 +160,7 @@ ul.social-icons li a .bi-instagram {
     #d6249f 60%,
     #285aeb 90%
   );
-  -webkit-background-clip: text;  
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -176,19 +176,16 @@ ul.social-icons li a .bi-youtube {
   color: #ff0000;
 }
 
-
 /* responsive */
 @media (max-width: 300px) {
-ul.social-icons {
-
-  flex-direction: column !important;
-align-items: center;
-}
-.footer-container ul li {
-  width: auto;
-
-}
-.copyright{
-  height: 5rem;
-}
+  ul.social-icons {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .footer-container ul li {
+    width: auto;
+  }
+  .copyright {
+    height: 5rem;
+  }
 }
