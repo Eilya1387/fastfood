@@ -175,3 +175,20 @@ ul.social-icons li a .bi-facebook {
 ul.social-icons li a .bi-youtube {
   color: #ff0000;
 }
+
+
+/* responsive */
+@media (max-width: 300px) {
+ul.social-icons {
+
+  flex-direction: column !important;
+align-items: center;
+}
+.footer-container ul li {
+  width: auto;
+
+}
+.copyright{
+  height: 5rem;
+}
+}
