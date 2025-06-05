@@ -3,10 +3,12 @@ import mclogo from "./images/mcdonald.png";
 import Home from "./components/home";
 import { Route, Routes, Link, Navigate } from "react-router-dom";
 import HamburgerMenu from "./components/hamburgermenu";
+import Headmenu from "./components/headmenu";
 function App() {
   return (
     <>
       <div className="head-container">
+        <Headmenu/>
         <div className="btn-container">
           <Link to="/signin">
             <button>ثبت نام</button>

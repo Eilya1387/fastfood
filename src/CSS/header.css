@@ -26,10 +26,11 @@ header {
 .title-header {
   font-family: secendary;
   color: var(--text-color);
-  font-size: 50px;
+  font-size: 46px;
   font-weight: bold;
   direction: rtl;
   width: 40%;
+
 }
 
 .picture img {
@@ -117,5 +118,6 @@ header {
 
   .title-header h1 {
     font-size: 8vw;
+    
   }
 }
