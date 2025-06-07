@@ -29,7 +29,7 @@ function App() {
               <Link to="/About">درباره ما</Link>
             </li>
             <li>
-              <Link to="/Contact">ارتباط با ما</Link>
+              <Link to="/Contact">پیتزا سفارشی</Link>
             </li>
           </ul>
         </div>
