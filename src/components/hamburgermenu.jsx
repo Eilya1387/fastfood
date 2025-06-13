@@ -42,25 +42,25 @@ const HamburgerMenu = () => {
       id: 7,
       name: "پیتزا قفقاز",
       price: "$3.50",
-      image: "/burgers/Caucasian Pizza.png",
+      image: "/burgers/Caucasian Pizza.webp",
     },
     {
       id: 8,
       name: "پیتزا یونانی",
       price: "$3.50",
-      image: "/burgers/Greek Pizza.png",
+      image: "/burgers/Greek Pizza.webp",
     },
     {
       id: 9,
       name: "پیتزا پای گوجه",
       price: "$2.50",
-      image: "/burgers/Tomatoe Pie.png",
+      image: "/burgers/Tomatoe Pie.webp",
     },
     {
       id: 10,
       name: "پیتزا امریکن",
       price: "$4.50",
-      image: "/burgers/american pizza.png",
+      image: "/burgers/american pizza.webp",
     },
   ];
 

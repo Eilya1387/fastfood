@@ -51,13 +51,13 @@ const Headmenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/About" onClick={toggleMenu}>
-                درباره ما
+              <Link to="/dashboard" onClick={toggleMenu}>
+                داشبورد
               </Link>
             </li>
             <li>
-              <Link to="/Contact" onClick={toggleMenu}>
-                ارتباط با ما
+              <Link to="/customizePizza" onClick={toggleMenu}>
+                پیتزا سفارشی
               </Link>
             </li>
             <li>
