@@ -28,7 +28,7 @@ body {
 .customize-master {
   height: 100vh;
   width: 100%;
-  background-image: url("./backgrounds/background2.png");
+  background-image: url("./backgrounds/background2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
