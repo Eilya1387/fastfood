@@ -72,22 +72,22 @@ body {
   z-index: 2;
 }
 .peperooni {
-  background-image: url("/burgers/peperooni.png");
+  background-image: url("/burgers/peperooni.webp");
 }
 .mushroom {
-  background-image: url("/burgers/mushroom.png");
+  background-image: url("/burgers/mushroom.webp");
 }
 .tomato {
-  background-image: url("/burgers/tomato.png");
+  background-image: url("/burgers/tomato.webp");
 }
 .olivae {
-  background-image: url("/burgers/olivae.png");
+  background-image: url("/burgers/olivae.webp");
 }
 .painapple {
-  background-image: url("/burgers/painapple.png");
+  background-image: url("/burgers/painapple.webp");
 }
 .dulce-piper {
-  background-image: url("/burgers/dulce-piper.png");
+  background-image: url("/burgers/dulce-piper.webp");
 }
 .dropped {
   position: absolute;
