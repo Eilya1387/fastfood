@@ -13,9 +13,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Order" element={<HamburgerMenu />} />
         {/* <Route path="/*" element={<Navigate to={"Error"} />}></Route> */}
-                <Route path="/customizePizza" element={<CustomizePizza />} />
       </Route>
 
+      <Route element={<NoHeaderLayout />}>
+        <Route path="/customizePizza" element={<CustomizePizza />} />
+      </Route>
     </Routes>
   );
 }
