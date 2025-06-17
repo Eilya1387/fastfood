@@ -1,8 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import "../CSS/customizePizza.css";
-
+import PopUp from "./popupPage";
 const CustomizePizza = () => {
   const [showWarning, setShowWarning] = useState(false);
+  const [popup, setPopup] = useState(true);
   const pizzaRef = useRef(null);
 
   const handleDragStart = (e, type) => {
@@ -33,6 +34,7 @@ const CustomizePizza = () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
   const handleDrop = (e) => {
     e.preventDefault();
     const type = e.dataTransfer.getData("text/plain");
@@ -66,20 +68,27 @@ const CustomizePizza = () => {
       newTopping.style.left = `${x - 45}px`;
       newTopping.style.top = `${y - 45}px`;
     }
-
+    newTopping.addEventListener("click", () => {
+      newTopping.style.display = "none";
+    });
     pizzaRef.current.appendChild(newTopping);
   };
 
   return (
     <>
       <div
-        className="customize-master"
+        className={`customize-master ${popup ? "blurred" : ""}`}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
       >
         {showWarning && (
           <div className="warning-banner">
             لطفاً آیتم را داخل پیتزا رها کنید 🍕
+          </div>
+        )}
+        {popup && (
+          <div className="div-pop">
+            <PopUp onclose={() => setPopup(false)} />
           </div>
         )}
         <div
