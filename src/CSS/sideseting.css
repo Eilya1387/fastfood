@@ -1,0 +1,161 @@
+:root {
+  --primary-color: #e63945;
+  --secondary-color: #faab34;
+  --text-color: white;
+}
+@font-face {
+  font-family: title;
+  src: url(./fonts/Pelak-Bold.ttf);
+}
+@font-face {
+  font-family: secendary;
+  src: url(./fonts/Vazir.ttf);
+}
+@font-face {
+  font-family: text;
+  src: url(./fonts/Shabnam.ttf);
+}
+.side-master {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  z-index: 2;
+}
+
+.r-icon {
+  width: 1rem;
+  height: 5rem;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.648);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+  color: white;
+  font-size: x-large;
+  cursor: pointer;
+}
+.side-container {
+  width: 30rem;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.648);
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
+  font-family: text;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.side-title {
+  font-family: title;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+}
+
+.side-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.side-section label {
+  font-weight: bold;
+}
+
+.side-section select,
+.side-section input[type="number"]{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-family: text;
+  font-size: 1rem;
+}
+
+.side-section input[type="range"] {
+
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-family: text;
+  font-size: 1rem;
+}
+
+.sauce-list,
+.drink-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.submit-button {
+  margin-top: auto;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  font-family: title;
+  transition: 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #c52735;
+}
+
+.r-icon {
+  width: 1rem;
+  height: 5rem;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.648);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+  color: white;
+  font-size: x-large;
+}
+.sauce-list input {
+  width: 1.5rem;
+}
+.drink-list input {
+  width: 1.5rem;
+}
+.dr-su {
+  display: flex;
+  width: 100%;
+  text-align: start;
+  justify-content: space-evenly;
+}
+.su-child {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+

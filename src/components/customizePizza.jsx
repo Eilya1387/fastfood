@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import "../CSS/customizePizza.css";
 import PopUp from "./popupPage";
+import Sideseting from "./sideseting";
 const CustomizePizza = () => {
   const [showWarning, setShowWarning] = useState(false);
   const [popup, setPopup] = useState(true);
@@ -91,6 +92,7 @@ const CustomizePizza = () => {
             <PopUp onclose={() => setPopup(false)} />
           </div>
         )}
+         <Sideseting/>
         <div
           className="pizza-bun"
           ref={pizzaRef}
@@ -129,7 +131,9 @@ const CustomizePizza = () => {
             onDragStart={(e) => handleDragStart(e, "dulce-piper")}
           ></div>
         </div>
+             
       </div>
+
     </>
   );
 };
