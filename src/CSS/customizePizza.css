@@ -188,7 +188,7 @@ body {
 }
 
 /* responsive */
-@media (max-width: 456px) {
+@media (max-width: 390px) {
   .pizza-bun {
     transform: scale(0.65) !important;
   }
@@ -200,8 +200,7 @@ body {
   }
 
   .pizza-bun {
-    width: 60vw;
-    height: 60vw;
+
     margin-top: -6rem;
     width: 75vh !important;
     height: 75vh !important;
@@ -243,8 +242,8 @@ body {
     flex-direction: column;
   }
   .pizza-bun {
-    width: 82vh !important;
-    height: 82vh !important;
+    width: 80vh !important;
+    height: 80vh !important; 
     margin-left: 0 !important;
   }
 
@@ -274,8 +273,8 @@ body {
 
 @media (max-width: 1024px) {
   .pizza-bun {
-    width: 80vh;
-    height: 80vh;
+ width: 65vw;
+  height: 65vw;
     margin-left: 5rem;
   }
 
