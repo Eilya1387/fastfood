@@ -40,16 +40,16 @@ const CustomizePizza = () => {
   e.preventDefault();
 
   const type = e.dataTransfer.getData("text/plain");
-
   const rect = pizzaRef.current.getBoundingClientRect();
 
   let x = e.clientX;
   let y = e.clientY;
+  let offset = 0;
 
-  // اگر event لمسی بود، مختصات رو از touch ها بگیر
   if (e.type === "touchend" && e.changedTouches && e.changedTouches.length > 0) {
-    x = e.changedTouches[0].clientX;
-    y = e.changedTouches[0].clientY;
+    const touch = e.changedTouches[0];
+    x = touch.clientX;
+    y = touch.clientY;
   }
 
   const radius = rect.width / 2;
@@ -68,17 +68,19 @@ const CustomizePizza = () => {
   const newTopping = document.createElement("div");
   newTopping.className = `${type} dropped`;
 
+  // اندازۀ تاپینگ
+  let size = 90;
   if (type === "peperooni" || type === "olivae") {
-    newTopping.style.width = "60px";
-    newTopping.style.height = "60px";
-    newTopping.style.left = `${x - rect.left - 30}px`;
-    newTopping.style.top = `${y - rect.top - 30}px`;
-  } else {
-    newTopping.style.width = "90px";
-    newTopping.style.height = "90px";
-    newTopping.style.left = `${x - rect.left - 45}px`;
-    newTopping.style.top = `${y - rect.top - 45}px`;
+    size = 60;
   }
+
+  newTopping.style.width = `${size}px`;
+  newTopping.style.height = `${size}px`;
+
+  // محاسبه مکان با توجه به مرکز انگشت
+  const centerOffset = size / 2;
+  newTopping.style.left = `${x - rect.left - centerOffset}px`;
+  newTopping.style.top = `${y - rect.top - centerOffset}px`;
 
   newTopping.addEventListener("click", () => {
     newTopping.style.display = "none";

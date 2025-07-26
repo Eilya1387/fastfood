@@ -200,7 +200,6 @@ body {
   }
 
   .pizza-bun {
-
     margin-top: -6rem;
     width: 75vh !important;
     height: 75vh !important;
@@ -243,7 +242,7 @@ body {
   }
   .pizza-bun {
     width: 80vh !important;
-    height: 80vh !important; 
+    height: 80vh !important;
     margin-left: 0 !important;
   }
 
@@ -273,8 +272,8 @@ body {
 
 @media (max-width: 1024px) {
   .pizza-bun {
- width: 65vw;
-  height: 65vw;
+    width: 65vw;
+    height: 65vw;
     margin-left: 5rem;
   }
 
