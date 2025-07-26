@@ -69,7 +69,7 @@
 }
 
 .side-section select,
-.side-section input[type="number"]{
+.side-section input[type="number"] {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: none;
@@ -79,7 +79,6 @@
 }
 
 .side-section input[type="range"] {
-
   border-radius: 0.5rem;
   border: none;
   outline: none;
@@ -144,18 +143,128 @@
   gap: 2px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
-    text-align: center;
-    font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+}
+.space {
+  display: none;
+}
+.bi-x {
+  display: none;
+}
+.bi-chevron-double-right,
+.bi-chevron-double-left {
+  display: block;
+}
+.setting {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.648);
+  position: absolute;
+  color: white;
+  text-align: center;
+  align-content: center;
+  right: 10px;
+  top: 10px;
+  font-size: xx-large;
+  display: none;
+}
+/* responsive */
+
+@media (max-width: 768px) {
+  .side-master {
+    transform: translateX(0) !important;
+    transform: translateY(-2rem) !important;
+    border-radius: 12px !important;
+    overflow-y: auto;
+    height: 80vh;
+    margin-top: 3rem;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.648);
+    opacity: 0;
+  }
+  .r-icon {
+    display: none;
+  }
+
+  .side-container {
+    padding: 4.5rem;
+    background-color: transparent;
+    width: auto;
+  }
+
+  .sauce-list,
+  .drink-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .su-child input {
+    width: 1.5rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+  .space {
+    display: block;
+  }
+  .setting {
+    display: block;
+  }
 }
 
+@media (max-width: 568px) {
+  .side-master {
+    margin-left: -5rem;
+  }
+}
+@media (max-width: 480px) {
+  .setting {
+    right: 1rem;
+    top: 0.5rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: x-large;
+  }
+  .side-master {
+    margin-left: -4rem;
+    margin-top: -5rem;
+    height: 74vh;
+  }
 
+  .side-title {
+    font-size: 1.3rem;
+  }
 
+  .side-section label {
+    font-size: 1rem;
+  }
+
+  .sauce-list,
+  .drink-list {
+    margin-left: 10px;
+  }
+
+  .r-icon {
+    right: 0.5rem;
+    bottom: 1rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 456px) {
+    .side-master {
+transform: scale(.9) !important;
+    margin-left: 0rem;
+    margin-top: -5rem;
+  }
+}
