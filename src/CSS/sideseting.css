@@ -20,6 +20,7 @@
   position: absolute;
   align-items: center;
   z-index: 2;
+
 }
 
 .r-icon {
@@ -182,8 +183,7 @@ input[type="number"] {
 
 @media (max-width: 768px) {
   .side-master {
-    transform: translateX(0) !important;
-    transform: translateY(-2rem) !important;
+    transform: scale(.01);
     border-radius: 12px !important;
     overflow-y: auto;
     height: 80vh;
@@ -241,6 +241,7 @@ input[type="number"] {
     margin-left: -4rem;
     margin-top: -5rem;
     height: 74vh;
+    transform: scale(.01);
   }
 
   .side-title {
@@ -264,8 +265,8 @@ input[type="number"] {
 }
 @media (max-width: 456px) {
   .side-master {
-    transform: scale(0.9) !important;
+    height: 70vh;
     margin-left: 0rem;
-    margin-top: -5rem;
+    margin-top: -3rem;
   }
 }

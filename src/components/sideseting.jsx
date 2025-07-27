@@ -30,9 +30,12 @@ const Sideseting = () => {
       <div
         className="side-master"
         style={{
-          transform: open ? "translateX(0)"  : "translateX(-29rem)",
           transition: "all 0.4s ease-in-out",
           opacity: isMobile ? (show ? "1" : "0") : "1",
+          transform: `${open ? "translateX(0)" : "translateX(-29rem)"} ${
+            isMobile ? (show ? "scale(.9)  translateY(-2rem)" : "scale(0.01)") : "scale(1)"
+          }`,
+
         }}
       >
         <div className="side-container" dir="rtl">
