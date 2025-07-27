@@ -200,6 +200,7 @@ input[type="number"] {
     padding: 4.5rem;
     background-color: transparent;
     width: auto;
+    padding-top: 7rem;  
   }
 
   .sauce-list,
@@ -262,8 +263,8 @@ input[type="number"] {
   }
 }
 @media (max-width: 456px) {
-    .side-master {
-transform: scale(.9) !important;
+  .side-master {
+    transform: scale(0.9) !important;
     margin-left: 0rem;
     margin-top: -5rem;
   }
