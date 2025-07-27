@@ -70,6 +70,7 @@ body {
   height: 18vh;
   cursor: grab;
   z-index: 2;
+  background-color: blue;
 }
 .peperooni {
   background-image: url("/burgers/peperooni.webp");
