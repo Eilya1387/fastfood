@@ -4,7 +4,8 @@ import PopUp from "./popupPage";
 import Sideseting from "./sideseting";
 
 const CustomizePizza = () => {
-  const MOBILE_BREAKPOINT = 768; 
+const isMobile = window.innerWidth <= 768; // یا هر عدد دلخواه
+
 
   const [showWarning, setShowWarning] = useState(false);
   const [popup, setPopup] = useState(true);
@@ -45,6 +46,7 @@ const handleDrop = (e) => {
   const type = e.dataTransfer.getData("text/plain");
   const rect = pizzaRef.current.getBoundingClientRect();
 
+  const isMobile = window.innerWidth <= 768;
 
   let x, y;
   if (e.changedTouches?.length) {
@@ -66,7 +68,6 @@ const handleDrop = (e) => {
     return;
   }
 
- 
   const newTopping = document.createElement("div");
   newTopping.className = `${type} dropped`;
 
@@ -75,12 +76,17 @@ const handleDrop = (e) => {
 
   newTopping.style.width = `${size}px`;
   newTopping.style.height = `${size}px`;
-  newTopping.style.left = `${x - rect.left - half}px`;
-  newTopping.style.top = `${y - rect.top - half}px`;
+
+  const offsetX = isMobile ? half : 0;
+  const offsetY = isMobile ? half : 0;
+
+  newTopping.style.left = `${x - rect.left - offsetX}px`;
+  newTopping.style.top = `${y - rect.top - offsetY}px`;
 
   newTopping.addEventListener("click", () => newTopping.remove());
   pizzaRef.current.appendChild(newTopping);
 };
+
 
 
 
