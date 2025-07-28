@@ -5,7 +5,7 @@ const Sideseting = () => {
   const [cheeseLevel, setCheeseLevel] = useState(1);
   const [open, setopen] = useState(false);
   const [show, setshow] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 769);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
@@ -17,14 +17,14 @@ const Sideseting = () => {
 
   return (
     <>
-      <div className="setting" onClick={() => setshow(!show)}>
+      <div className="setting">
         <div
           style={{
             transition: "1s ease-in-out",
             transform: show ? "rotate(200deg)" : "rotate(0deg)",
           }}
         >
-          <i class="bi bi-gear-fill"></i>
+          <i class="bi bi-gear-fill" onClick={() => setshow(!show)}></i>
         </div>
       </div>
       <div
@@ -32,10 +32,13 @@ const Sideseting = () => {
         style={{
           transition: "all 0.4s ease-in-out",
           opacity: isMobile ? (show ? "1" : "0") : "1",
-          transform: `${open ? "translateX(0)" : "translateX(-29rem)"} ${
-            isMobile ? (show ? "scale(.9)  translateY(-2rem)" : "scale(0.01)") : "scale(1)"
-          }`,
-
+          transform: isMobile
+            ? show
+              ? "scale(0.9) translateY(-2rem)"
+              : "scale(0.01)"
+            : open
+            ? "translateX(0) scale(1)"
+            : "translateX(-29rem) scale(1)",
         }}
       >
         <div className="side-container" dir="rtl">

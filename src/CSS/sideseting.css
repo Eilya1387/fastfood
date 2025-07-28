@@ -190,7 +190,7 @@ input[type="number"] {
     margin-top: 3rem;
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.648);
-    opacity: 0;
+    
   }
   .r-icon {
     display: none;
@@ -241,7 +241,6 @@ input[type="number"] {
     margin-left: -4rem;
     margin-top: -5rem;
     height: 74vh;
-    transform: scale(.01);
   }
 
   .side-title {
