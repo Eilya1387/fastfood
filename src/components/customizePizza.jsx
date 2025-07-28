@@ -4,8 +4,6 @@ import PopUp from "./popupPage";
 import Sideseting from "./sideseting";
 
 const CustomizePizza = () => {
-const isMobile = window.innerWidth <= 768; // یا هر عدد دلخواه
-
 
   const [showWarning, setShowWarning] = useState(false);
   const [popup, setPopup] = useState(true);
@@ -46,14 +44,16 @@ const handleDrop = (e) => {
   const type = e.dataTransfer.getData("text/plain");
   const rect = pizzaRef.current.getBoundingClientRect();
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth < 768;
 
   let x, y;
-  if (e.changedTouches?.length) {
-    const touch = e.changedTouches[0];
-    x = touch.clientX;
-    y = touch.clientY;
+  
+  if (isMobile) {
+    // در موبایل، همیشه وسط پیتزا دراپ کن
+    x = rect.left + rect.width / 2;
+    y = rect.top + rect.height / 2;
   } else {
+    // دسکتاپ و لپ‌تاپ
     x = e.clientX;
     y = e.clientY;
   }
@@ -62,6 +62,7 @@ const handleDrop = (e) => {
   const dx = x - rect.left - radius;
   const dy = y - rect.top - radius;
   const maxDropRadius = radius * 0.75;
+
   if (dx * dx + dy * dy > maxDropRadius * maxDropRadius) {
     setShowWarning(true);
     setTimeout(() => setShowWarning(false), 3000);
@@ -76,12 +77,8 @@ const handleDrop = (e) => {
 
   newTopping.style.width = `${size}px`;
   newTopping.style.height = `${size}px`;
-
-  const offsetX = isMobile ? half : 0;
-  const offsetY = isMobile ? half : 0;
-
-  newTopping.style.left = `${x - rect.left - offsetX}px`;
-  newTopping.style.top = `${y - rect.top - offsetY}px`;
+  newTopping.style.left = `${x - rect.left - half}px`;
+  newTopping.style.top = `${y - rect.top - half}px`;
 
   newTopping.addEventListener("click", () => newTopping.remove());
   pizzaRef.current.appendChild(newTopping);
