@@ -2,7 +2,10 @@ import { useRef, useState, useEffect } from "react";
 import "../CSS/customizePizza.css";
 import PopUp from "./popupPage";
 import Sideseting from "./sideseting";
+
 const CustomizePizza = () => {
+  const MOBILE_BREAKPOINT = 768; 
+
   const [showWarning, setShowWarning] = useState(false);
   const [popup, setPopup] = useState(true);
   const pizzaRef = useRef(null);
@@ -36,58 +39,49 @@ const CustomizePizza = () => {
     };
   }, []);
 
- const handleDrop = (e) => {
+const handleDrop = (e) => {
   e.preventDefault();
 
   const type = e.dataTransfer.getData("text/plain");
   const rect = pizzaRef.current.getBoundingClientRect();
 
-  let x = e.clientX;
-  let y = e.clientY;
-  let offset = 0;
 
-  if (e.type === "touchend" && e.changedTouches && e.changedTouches.length > 0) {
+  let x, y;
+  if (e.changedTouches?.length) {
     const touch = e.changedTouches[0];
     x = touch.clientX;
     y = touch.clientY;
+  } else {
+    x = e.clientX;
+    y = e.clientY;
   }
 
   const radius = rect.width / 2;
   const dx = x - rect.left - radius;
   const dy = y - rect.top - radius;
   const maxDropRadius = radius * 0.75;
-
-  const isOutside = dx * dx + dy * dy > maxDropRadius * maxDropRadius;
-
-  if (isOutside) {
+  if (dx * dx + dy * dy > maxDropRadius * maxDropRadius) {
     setShowWarning(true);
     setTimeout(() => setShowWarning(false), 3000);
     return;
   }
 
+ 
   const newTopping = document.createElement("div");
   newTopping.className = `${type} dropped`;
 
-  // اندازۀ تاپینگ
-  let size = 90;
-  if (type === "peperooni" || type === "olivae") {
-    size = 60;
-  }
+  const size = (type === "peperooni" || type === "olivae") ? 60 : 90;
+  const half = size / 2;
 
   newTopping.style.width = `${size}px`;
   newTopping.style.height = `${size}px`;
+  newTopping.style.left = `${x - rect.left - half}px`;
+  newTopping.style.top = `${y - rect.top - half}px`;
 
-  // محاسبه مکان با توجه به مرکز انگشت
-  const centerOffset = size / 2;
-  newTopping.style.left = `${x - rect.left - centerOffset}px`;
-  newTopping.style.top = `${y - rect.top - centerOffset}px`;
-
-  newTopping.addEventListener("click", () => {
-    newTopping.style.display = "none";
-  });
-
+  newTopping.addEventListener("click", () => newTopping.remove());
   pizzaRef.current.appendChild(newTopping);
 };
+
 
 
   return (
