@@ -220,8 +220,8 @@ body {
   }
 
   .side-child {
-    width: 12vh;
-    height: 14vh;
+    width: 10vh !important;
+    height: 10vh !important;
     flex: 0 0 auto;
   }
 
@@ -261,7 +261,7 @@ body {
   }
 
   .side-child {
-    width: 18vh !important;
+    width: 18vh;
     height: 16vh;
     flex: 0 0 auto;
   }
