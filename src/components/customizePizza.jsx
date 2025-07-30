@@ -49,11 +49,11 @@ const handleDrop = (e) => {
   let x, y;
   
   if (isMobile) {
-    // در موبایل، همیشه وسط پیتزا دراپ کن
+
     x = rect.left + rect.width / 2;
     y = rect.top + rect.height / 2;
   } else {
-    // دسکتاپ و لپ‌تاپ
+  
     x = e.clientX;
     y = e.clientY;
   }
@@ -82,7 +82,7 @@ const handleDrop = (e) => {
 
   newTopping.addEventListener("click", () => newTopping.remove());
   pizzaRef.current.appendChild(newTopping);
-};
+  };
 
 
 

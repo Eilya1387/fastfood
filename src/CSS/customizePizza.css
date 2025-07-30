@@ -37,17 +37,18 @@ body {
   position: relative;
 }
 .pizza-bun {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vmin;
+  height: 100vmin;
+  transform: translate(-50%, -50%);
   overflow: hidden;
-  width: 95vh;
-  height: 95vh;
   border-radius: 50%;
-  margin-left: 40vh;
   background-image: url("/burgers/null-pizza.webp");
   background-size: cover;
   background-position: center;
   z-index: 1;
-  background-color: red;
 }
 
 .side-bar {
@@ -71,7 +72,6 @@ body {
   height: 18vh;
   cursor: grab;
   z-index: 2;
-  background-color: blue;
 }
 .peperooni {
   background-image: url("/burgers/peperooni.webp");
@@ -190,11 +190,6 @@ body {
 }
 
 /* responsive */
-@media (max-width: 390px) {
-  .pizza-bun {
-    transform: scale(0.65) !important;
-  }
-}
 @media (max-width: 480px) {
   .customize-master {
     flex-direction: column;
@@ -202,10 +197,9 @@ body {
   }
 
   .pizza-bun {
-    margin-top: -6rem;
-    width: 75vh !important;
-    height: 75vh !important;
-    transform: scale(0.9);
+    width: 80vmin;
+    height: 80vmin;
+    transform: translate(-50%, -60%) !important;
   }
 
   .side-bar {
@@ -220,8 +214,8 @@ body {
   }
 
   .side-child {
-    width: 10vh !important;
-    height: 10vh !important;
+    width: 15vh !important;
+    height: 15vh !important;
     flex: 0 0 auto;
   }
 
@@ -243,9 +237,9 @@ body {
     flex-direction: column;
   }
   .pizza-bun {
-    width: 80vh !important;
-    height: 80vh !important;
-    margin-left: 0 !important;
+    width: 80vmin;
+    height: 80vmin;
+    transform: translate(-50%, -60%) !important;
   }
 
   .side-bar {
@@ -274,9 +268,9 @@ body {
 
 @media (max-width: 1024px) {
   .pizza-bun {
-    width: 65vw;
-    height: 65vw;
-    margin-left: 5rem;
+    transform: translate(-50%, -50%);
+    width: 80vmin;
+    height: 80vmin;
   }
 
   .side-bar {
