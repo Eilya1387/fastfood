@@ -1,4 +1,5 @@
 import "../CSS/sideseting.css";
+import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 const Sideseting = () => {
   const [spicyLevel, setSpicyLevel] = useState(1);
@@ -14,7 +15,19 @@ const Sideseting = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  const handleSubmit = () => {
+    toast.success(
+      <strong className="bold-toast">سفارش شما با موفقیت ثبت شد</strong>,
+      {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      }
+    );
+  };
   return (
     <>
       <div className="setting">
@@ -111,7 +124,9 @@ const Sideseting = () => {
               </div>
             </div>
           </div>
-          <button className="submit-button">ثبت سفارش</button>
+          <button className="submit-button" onClick={handleSubmit}>
+            ثبت سفارش
+          </button>
           <br className="space" />
         </div>
 

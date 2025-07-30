@@ -70,11 +70,11 @@ const CustomizePizza = () => {
     const newTopping = document.createElement("div");
     newTopping.className = `${type} dropped`;
 
-let size = (type === "peperooni" || type === "olivae") ? 60 : 90;
-if (isMobile) {
-  size = size * 0.5;
-}
-const half = size / 2;
+    let size = type === "peperooni" || type === "olivae" ? 60 : 90;
+    if (isMobile) {
+      size = size * 0.5;
+    }
+    const half = size / 2;
 
     newTopping.style.width = `${size}px`;
     newTopping.style.height = `${size}px`;

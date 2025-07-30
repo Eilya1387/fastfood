@@ -20,7 +20,6 @@
   position: absolute;
   align-items: center;
   z-index: 2;
-
 }
 
 .r-icon {
@@ -179,18 +178,21 @@ input[type="number"] {
   font-size: xx-large;
   display: none;
 }
+.bold-toast {
+  font-family: title;
+  font-weight: bold;
+}
 /* responsive */
 
 @media (max-width: 768px) {
   .side-master {
-    transform: scale(.01);
+    transform: scale(0.01);
     border-radius: 12px !important;
     overflow-y: auto;
     height: 80vh;
     margin-top: 3rem;
     z-index: 3;
     background-color: rgba(0, 0, 0, 0.648);
-    
   }
   .r-icon {
     display: none;
@@ -200,7 +202,7 @@ input[type="number"] {
     padding: 4.5rem;
     background-color: transparent;
     width: auto;
-    padding-top: 7rem;  
+    padding-top: 7rem;
   }
 
   .sauce-list,
