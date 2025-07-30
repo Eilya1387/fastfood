@@ -196,9 +196,9 @@ body {
     justify-content: center;
   }
 
-  .pizza-bun {
-    width: 80vmin;
-    height: 80vmin;
+  .customize-master .pizza-bun {
+    width: 100vmin !important;
+    height: 100vmin !important;
     transform: translate(-50%, -60%) !important;
   }
 
@@ -237,8 +237,8 @@ body {
     flex-direction: column;
   }
   .pizza-bun {
-    width: 80vmin;
-    height: 80vmin;
+    width: 88vmin !important;
+    height: 88vmin !important;
     transform: translate(-50%, -60%) !important;
   }
 
@@ -268,9 +268,9 @@ body {
 
 @media (max-width: 1024px) {
   .pizza-bun {
-    transform: translate(-50%, -50%);
-    width: 80vmin;
-    height: 80vmin;
+    transform: translate(-60%, -50%);
+    width: 90vmin;
+    height: 90vmin;
   }
 
   .side-bar {

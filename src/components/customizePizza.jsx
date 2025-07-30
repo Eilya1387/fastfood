@@ -4,7 +4,6 @@ import PopUp from "./popupPage";
 import Sideseting from "./sideseting";
 
 const CustomizePizza = () => {
-
   const [showWarning, setShowWarning] = useState(false);
   const [popup, setPopup] = useState(true);
   const pizzaRef = useRef(null);
@@ -38,54 +37,53 @@ const CustomizePizza = () => {
     };
   }, []);
 
-const handleDrop = (e) => {
-  e.preventDefault();
+  const handleDrop = (e) => {
+    e.preventDefault();
 
-  const type = e.dataTransfer.getData("text/plain");
-  const rect = pizzaRef.current.getBoundingClientRect();
+    const type = e.dataTransfer.getData("text/plain");
+    const rect = pizzaRef.current.getBoundingClientRect();
 
-  const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 768;
 
-  let x, y;
-  
-  if (isMobile) {
+    let x, y;
 
-    x = rect.left + rect.width / 2;
-    y = rect.top + rect.height / 2;
-  } else {
-  
-    x = e.clientX;
-    y = e.clientY;
-  }
+    if (e.type === "touchend" && e.changedTouches?.length) {
+      const touch = e.changedTouches[0];
+      x = touch.clientX;
+      y = touch.clientY;
+    } else {
+      x = e.clientX;
+      y = e.clientY;
+    }
 
-  const radius = rect.width / 2;
-  const dx = x - rect.left - radius;
-  const dy = y - rect.top - radius;
-  const maxDropRadius = radius * 0.75;
+    const radius = rect.width / 2;
+    const dx = x - rect.left - radius;
+    const dy = y - rect.top - radius;
+    const maxDropRadius = radius * 0.75;
 
-  if (dx * dx + dy * dy > maxDropRadius * maxDropRadius) {
-    setShowWarning(true);
-    setTimeout(() => setShowWarning(false), 3000);
-    return;
-  }
+    if (dx * dx + dy * dy > maxDropRadius * maxDropRadius) {
+      setShowWarning(true);
+      setTimeout(() => setShowWarning(false), 3000);
+      return;
+    }
 
-  const newTopping = document.createElement("div");
-  newTopping.className = `${type} dropped`;
+    const newTopping = document.createElement("div");
+    newTopping.className = `${type} dropped`;
 
-  const size = (type === "peperooni" || type === "olivae") ? 60 : 90;
-  const half = size / 2;
+let size = (type === "peperooni" || type === "olivae") ? 60 : 90;
+if (isMobile) {
+  size = size * 0.5;
+}
+const half = size / 2;
 
-  newTopping.style.width = `${size}px`;
-  newTopping.style.height = `${size}px`;
-  newTopping.style.left = `${x - rect.left - half}px`;
-  newTopping.style.top = `${y - rect.top - half}px`;
+    newTopping.style.width = `${size}px`;
+    newTopping.style.height = `${size}px`;
+    newTopping.style.left = `${x - rect.left - half}px`;
+    newTopping.style.top = `${y - rect.top - half}px`;
 
-  newTopping.addEventListener("click", () => newTopping.remove());
-  pizzaRef.current.appendChild(newTopping);
+    newTopping.addEventListener("click", () => newTopping.remove());
+    pizzaRef.current.appendChild(newTopping);
   };
-
-
-
 
   return (
     <>
@@ -104,7 +102,7 @@ const handleDrop = (e) => {
             <PopUp onclose={() => setPopup(false)} />
           </div>
         )}
-         <Sideseting/>
+        <Sideseting />
         <div
           className="pizza-bun"
           ref={pizzaRef}
@@ -143,9 +141,7 @@ const handleDrop = (e) => {
             onDragStart={(e) => handleDragStart(e, "dulce-piper")}
           ></div>
         </div>
-             
       </div>
-
     </>
   );
 };
