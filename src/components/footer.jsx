@@ -8,10 +8,10 @@ const Footer = () => {
 <div className="foot-slide1">
   <h2>شبکه های اجتماعی</h2>
 <ul className="social-icons">
-  <li><a href="#"><i className="bi bi-instagram"></i></a></li>
-  <li><a href="#"><i className="bi bi-whatsapp"></i></a></li>
-  <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-  <li><a href="#"><i className="bi bi-youtube"></i></a></li>
+  <li><a href="https://t.me/coffeee_web"><i className="bi bi-instagram"></i></a></li>
+  <li><a href="https://t.me/coffeee_web"><i className="bi bi-whatsapp"></i></a></li>
+  <li><a href="https://t.me/coffeee_web"><i class="bi bi-facebook"></i></a></li>
+  <li><a href="https://t.me/coffeee_web"><i className="bi bi-youtube"></i></a></li>
 </ul>
 
 </div>
@@ -21,8 +21,8 @@ const Footer = () => {
       <ul>
         <li><Link to="/">خانه</Link></li>
         <li><Link to="/Order">منوی غذا</Link></li>
-        <li><Link to="/About">درباره ما</Link></li>
-        <li><Link to="/Contact">ارتباط با ما</Link></li>
+        <li><Link to="/customizePizza">پیتزا سفارشی</Link></li>
+        <li><Link to="/dashboard">داشبورد</Link></li>
       </ul>
     </div>
     <div className="foot-slide3">

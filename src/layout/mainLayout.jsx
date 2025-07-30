@@ -8,10 +8,10 @@ const MainLayout = () => {
       <div className="head-container">
         <Headmenu/>
         <div className="btn-container">
-          <Link to="/signin">
+          <Link to="/dashboard">
             <button>ثبت نام</button>
           </Link>
-          <Link to="/login">
+          <Link to="/dashboard">
             <button>ورود</button>
           </Link>
         </div>
