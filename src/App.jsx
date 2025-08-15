@@ -8,6 +8,8 @@ import NoHeaderLayout from "./layout/noHeaderLayout";
 import Dashboard from "./components/dashboard";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Auth from "./components/authPage";
+
 function App() {
   return (
     <>
@@ -21,6 +23,7 @@ function App() {
 
         <Route element={<NoHeaderLayout />}>
           <Route path="/customizePizza" element={<CustomizePizza />} />
+          <Route path="/Auth" element={<Auth/>} />
         </Route>
       </Routes>
 
