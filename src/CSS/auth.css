@@ -245,12 +245,14 @@ transform: scale(1.09);
 
 @media (max-width: 360px) {
   .auth-card {
-    padding: 0.8rem;
+    padding: 1.8rem;
     max-width: 300px;
   }
-
+  .pwd-toggle {
+    left: 5px;
+  }
   .brand {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .tab {

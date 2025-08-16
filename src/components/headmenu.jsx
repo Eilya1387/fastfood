@@ -61,12 +61,12 @@ const Headmenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/login" onClick={toggleMenu}>
+              <Link to="/Auth" onClick={toggleMenu}>
                 ورود
               </Link>
             </li>
             <li>
-              <Link to="/signin" onClick={toggleMenu}>
+              <Link to="/Auth" onClick={toggleMenu}>
                 ثبت نام
               </Link>
             </li>
