@@ -79,6 +79,9 @@
   z-index: 2;
   margin-bottom: 5vh;
 }
+.l-btn{
+    z-index: 2;
+}
 .poster1 button:hover,
 .poster2 button:hover,
 .poster3 button:hover {

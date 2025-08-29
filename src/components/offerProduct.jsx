@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../CSS/offerproducts.css";
 const OffersProducts = () => {
   return (
@@ -10,7 +11,9 @@ const OffersProducts = () => {
               <span>10$</span>
             </div>
             <h3>قاچ های سیب زمینی پخته شده با سیر ترد</h3>
-            <button>سفارش</button>
+            <Link to="/Order" className="l-btn">
+              <button>سفارش</button>
+            </Link>
           </div>
           <div className="poster2">
             <div className="circle-poster">
@@ -18,7 +21,9 @@ const OffersProducts = () => {
               <span>15$</span>
             </div>
             <h3>برگر فارم هاوس</h3>
-            <button>سفارش</button>
+            <Link to="/Order"  className="l-btn">
+              <button>سفارش</button>
+            </Link>
           </div>
         </div>
         <div className="poster-child2">
@@ -28,7 +33,9 @@ const OffersProducts = () => {
               <span>18$</span>
             </div>
             <h3>برگر کینوا و لوبیا سیاه</h3>
-            <button>سفارش</button>
+            <Link to="/Order"  className="l-btn"> 
+              <button>سفارش</button>
+            </Link>
           </div>
         </div>
       </div>

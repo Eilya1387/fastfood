@@ -1,12 +1,15 @@
 import "../CSS/dashboard.css";
 const InfoDashboard = () => {
-    return ( 
-        <>
-              <div className="info-master">
+  return (
+    <>
+      <div className="info-master">
         <div className="info-container">
           <div className="child-info">
             <i class="bi bi-cash-coin"></i>
-            <span className="price">120$</span>
+            <span className="price" dir="rtl">
+              {" "}
+              ۲٬۷۳۹٬۰۰۰<span> تومان</span>{" "}
+            </span>
             <span className="des">سود شما</span>
           </div>
           <div className="child-info">
@@ -26,8 +29,8 @@ const InfoDashboard = () => {
           </div>
         </div>
       </div>
-        </>
-     );
-}
- 
+    </>
+  );
+};
+
 export default InfoDashboard;
