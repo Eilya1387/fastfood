@@ -62,9 +62,9 @@
   position: relative;
   z-index: 2;
 }
-.poster1 button,
-.poster2 button,
-.poster3 button {
+.poster1 .l-btn,
+.poster2 .l-btn,
+.poster3 .l-btn{
   width: 25vh;
   height: 6vh;
   border-radius: 50px;
@@ -78,10 +78,10 @@
   transition: 0.3s;
   z-index: 2;
   margin-bottom: 5vh;
+  text-align: center;
+  align-content: center;
 }
-.l-btn{
-    z-index: 2;
-}
+
 .poster1 button:hover,
 .poster2 button:hover,
 .poster3 button:hover {
@@ -182,9 +182,9 @@
     padding: 0 2vw;
   }
 
-  .poster1 button,
-  .poster2 button,
-  .poster3 button {
+  .poster1 .l-btn,
+  .poster2 .l-btn,
+  .poster3 .l-btn {
     width: 60%;
     height: 5vh;
     font-size: 1.8vh;
@@ -218,9 +218,9 @@
     padding: 0 5vw;
   }
 
-  .poster1 button,
-  .poster2 button,
-  .poster3 button {
+  .poster1 .l-btn,
+  .poster2 .l-btn,
+  .poster3 .l-btn {
     width: 70%;
     height: 4.5vh;
     font-size: 1.5vh;

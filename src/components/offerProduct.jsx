@@ -12,7 +12,7 @@ const OffersProducts = () => {
             </div>
             <h3>قاچ های سیب زمینی پخته شده با سیر ترد</h3>
             <Link to="/Order" className="l-btn">
-              <button>سفارش</button>
+              سفارش
             </Link>
           </div>
           <div className="poster2">
@@ -21,8 +21,8 @@ const OffersProducts = () => {
               <span>15$</span>
             </div>
             <h3>برگر فارم هاوس</h3>
-            <Link to="/Order"  className="l-btn">
-              <button>سفارش</button>
+            <Link to="/Order" className="l-btn">
+              سفارش
             </Link>
           </div>
         </div>
@@ -33,8 +33,8 @@ const OffersProducts = () => {
               <span>18$</span>
             </div>
             <h3>برگر کینوا و لوبیا سیاه</h3>
-            <Link to="/Order"  className="l-btn"> 
-              <button>سفارش</button>
+            <Link to="/Order" className="l-btn">
+              سفارش
             </Link>
           </div>
         </div>

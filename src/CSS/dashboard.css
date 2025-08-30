@@ -308,8 +308,15 @@
   cursor: pointer;
   box-shadow: 0 10px 24px rgba(230, 57, 69, 0.12);
   font-family: title;
+  width: 100%;
 }
-
+.remove{
+  background: red;
+}
+.bold-toast {
+  font-family: title;
+  font-weight: bold;
+}
 .cards-responsive {
   display: none;
 }

@@ -1,18 +1,32 @@
 import { useMemo, useState, useEffect } from "react";
 import "../CSS/dashboard.css";
-
+import { toast } from "react-toastify";
 const faN = (num) =>
   new Intl.NumberFormat("fa-IR", { maximumFractionDigits: 0 }).format(num);
 
 export default function OrderTable({ onSubmit }) {
   const [rows, setRows] = useState([]);
-
+  const handlesubmit = () => {
+    toast.success(
+      <strong className="bold-toast">سفارش شما با موفقیت ثبت شد</strong>,
+      {
+        position: "bottom-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      }
+    );
+    localStorage.removeItem("cart");
+    setRows([]);
+  };
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-     const mapped = cart.map((item, idx) => ({
+    const mapped = cart.map((item, idx) => ({
       id: idx + 1,
       name: item.title,
-      img: item.image ,
+      img: item.image,
       qty: item.quantity,
       unitPrice: item.price,
     }));
@@ -63,7 +77,6 @@ export default function OrderTable({ onSubmit }) {
                           </div>
                           <div className="prod-meta">
                             <div className="prod-name">{r.name}</div>
-                          
                           </div>
                         </div>
                       </td>
@@ -129,13 +142,17 @@ export default function OrderTable({ onSubmit }) {
               </div>
             </div>
             <div className="order-actions">
-              <button
-                className="submit-order"
-                onClick={() =>
-                  onSubmit ? onSubmit(rows) : alert("سفارش ثبت شد")
-                }
-              >
+              <button className="submit-order" onClick={handlesubmit}>
                 پرداخت
+              </button>
+              <button
+                className="submit-order remove"
+                onClick={() => {
+                  localStorage.removeItem("cart");
+                  setRows([]);
+                }}
+              >
+                حذف همه
               </button>
             </div>
           </>
