@@ -7,14 +7,17 @@ const MainLayout = () => {
   const [cartcount, setcartcount] = useState(0);
 
   useEffect(() => {
-    try {
+    const updateCart = () => {
       const saved = localStorage.getItem("cart");
       const cart = saved ? JSON.parse(saved) : [];
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
       setcartcount(totalItems);
-    } catch (e) {
-      setcartcount(0);
-    }
+    };
+
+    updateCart();
+    window.addEventListener("cartUpdated", updateCart);
+
+    return () => window.removeEventListener("cartUpdated", updateCart);
   }, []);
 
   return (
