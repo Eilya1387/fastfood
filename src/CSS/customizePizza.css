@@ -35,6 +35,7 @@ body {
   display: flex;
   align-items: center;
   position: relative;
+  overflow-y: hidden;
 }
 .pizza-bun {
   position: absolute;
